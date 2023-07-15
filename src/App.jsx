@@ -2,6 +2,33 @@ import "./styles.css"
 
 export default function App() {
   return (
-    <h1>Hi</h1>
+    <>
+    <form className="new-item-form">
+      <div className="form-row">
+        <label htmlFor="item">Novo item</label>
+        <input type="text" name="item" id="item" />
+      </div>
+      <button className="btn">Add</button>
+    </form>
+
+    <h1 className="header">Lista de Todos:</h1>
+    <ul className="list">
+      <li>
+        <label>
+          <input type="checkbox" />
+          Item 1
+        </label>
+        <button className="btn btn-danger">Delete</button>
+      </li>
+    
+      <li>
+        <label htmlFor="todo">
+          <input type="checkbox" />
+          Item 2
+        </label>
+        <button className="btn btn-danger">Delete</button>
+      </li>
+    </ul>
+    </>
   )
 }
