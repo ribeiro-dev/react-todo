@@ -54,6 +54,7 @@ export default function App() {
 
       <h1 className="header">Lista de Todos:</h1>
       <ul className="list">
+        {todos.length == 0 && "Nenhum item adicionado ainda"}
         {todos.map(todo => {
           return (
             <li key={todo.id}>
