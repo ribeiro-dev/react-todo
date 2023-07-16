@@ -102,7 +102,7 @@
     outline: 1px solid hsl(200, 100%, 50%);
   }
   
-  .list li input {
+  /* .list li input {
     outline: none;
     width: 0;
     height: 0;
@@ -137,4 +137,4 @@
   
   .list li:has(input:checked) label:hover::before {
     background: hsl(200, 100%, 30%);
-  }
+  } */
