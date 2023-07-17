@@ -1,24 +1,28 @@
 import PropTypes from 'prop-types';
 
+import { Button, Checkbox, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
-export default function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
+export default function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
   return (
-    <li key={id}>
-      <label>
-        <input
-          type="checkbox"
+    <ListItem key={id}>
+      <ListItemIcon>
+        <Checkbox
           checked={completed}
-        onChange={e => toggleTodo(id, e.target.checked)}
+          onChange={e => toggleTodo(id, e.target.checked)}
         />
+      </ListItemIcon>
+      <ListItemText>
         {title}
-      </label>
-      <button
-        className="btn btn-danger"
-      onClick={() => deleteTodo(id)}
-      >
-        Delete
-      </button>
-    </li>
+        <Button
+          color='error'
+          variant='outlined'
+          onClick={() => deleteTodo(id)}
+          sx={{ml: 2}}
+        >
+          Delete
+        </Button>
+    </ListItemText>
+    </ListItem >
   )
 }
 

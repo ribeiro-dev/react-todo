@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import "./styles.css"
+import { Container, Paper, Typography } from "@mui/material";
 
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from "./components/TodoList";
@@ -52,11 +52,19 @@ export default function App() {
   }
 
   return (
-    <>
-      <NewTodoForm addTodo={addTodo} />
+    <Paper component='div' elevation={4}
+      sx={{
+        width: '100%',
+        height: '100vh',
+        borderRadius: 0
+      }}
+    >
+      <Container maxWidth='md'>
+        <NewTodoForm addTodo={addTodo} />
 
-      <h1 className="header">Lista de Todos:</h1>
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-    </>
+        <Typography mt={3} variant='h4' className="header">Lista de Todos:</Typography>
+        <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      </Container>
+    </Paper>
   )
 }
