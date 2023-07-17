@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 
-// import "./styles.css"
-import { Box, Typography } from "@mui/material";
+import { Container, Paper, Typography } from "@mui/material";
 
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from "./components/TodoList";
@@ -53,17 +52,19 @@ export default function App() {
   }
 
   return (
-    <>
-      <Box component='div' sx={{
-        backgroundColor: 'background.default',
+    <Paper component='div' elevation={4}
+      sx={{
         width: '100%',
-      }}>
-
+        height: '100vh',
+        borderRadius: 0
+      }}
+    >
+      <Container maxWidth='md'>
         <NewTodoForm addTodo={addTodo} />
 
-        <Typography mt={3} variant='h4' className="header" sx={{color: 'text.primary'}}>Lista de Todos:</Typography>
+        <Typography mt={3} variant='h4' className="header">Lista de Todos:</Typography>
         <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-      </Box>
-    </>
+      </Container>
+    </Paper>
   )
 }

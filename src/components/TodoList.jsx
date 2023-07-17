@@ -1,3 +1,5 @@
+import { List } from '@mui/material';
+
 import PropTypes from 'prop-types';
 
 import TodoItem from './TodoItem';
@@ -5,7 +7,7 @@ import TodoItem from './TodoItem';
 export default function TodoList({ todos, toggleTodo, deleteTodo }) {
 
   return (
-    <ul className="list">
+    <List className="list">
       {/* placeholder */}
       {todos.length == 0 && "Nenhum item adicionado ainda"}
 
@@ -19,7 +21,7 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
           />
         )
       })}
-    </ul>
+    </List>
   )
 }
 

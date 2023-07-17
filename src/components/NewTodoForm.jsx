@@ -18,14 +18,14 @@ export default function NewTodoForm({ addTodo }) {
     <Box component='form' onSubmit={handleSubmit} className="new-item-form" sx={{ background: 'background.default' }}>
       <Box className="form-row" sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography variant='h4' mb={2}>Criar Novo Item</Typography>
-        {/* <label htmlFor="item">Novo item</label>
-            <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" name="item" id="item" /> */}
         <TextField
           label='Novo Item'
           variant="outlined"
+          value={newItem}
+          onChange={e => setNewItem(e.target.value)}
         />
       </Box>
-      <Button variant='contained' fullWidth className="btn">Criar</Button>
+      <Button type="submit" variant='contained' fullWidth className="btn">Criar</Button>
     </Box>
   );
 }
