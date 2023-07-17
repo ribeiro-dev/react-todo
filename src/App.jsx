@@ -55,7 +55,7 @@ export default function App() {
     <Paper component='div' elevation={4}
       sx={{
         width: '100%',
-        height: '100vh',
+        minHeight: '100vh',
         borderRadius: 0
       }}
     >
