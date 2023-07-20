@@ -67,7 +67,7 @@ export default function Index({ toggleTheme, theme }) {
         transition: 'background-color .3s ease'
       }}
     >
-      <Container maxWidth='md'>
+      <Container maxWidth='sm'>
         <Box sx={{ textAlign: 'right', py: '10px' }}>
           <IconButton aria-label="toggle theme" onClick={toggleTheme}>
             {theme == 'light' ? <IoSunny /> : <IoMoon />}
