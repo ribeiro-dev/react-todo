@@ -11,17 +11,16 @@ export default function TodoItem({ completed, id, title, toggleTodo, deleteTodo 
           onChange={e => toggleTodo(id, e.target.checked)}
         />
       </ListItemIcon>
-      <ListItemText>
-        {title}
-        <Button
-          color='error'
-          variant='outlined'
-          onClick={() => deleteTodo(id)}
-          sx={{ml: 2}}
-        >
-          Delete
-        </Button>
-    </ListItemText>
+
+      <ListItemText primary={title} />
+
+      <Button
+        color='error'
+        variant='outlined'
+        onClick={() => deleteTodo(id)}
+      >
+        Delete
+      </Button>
     </ListItem >
   )
 }
