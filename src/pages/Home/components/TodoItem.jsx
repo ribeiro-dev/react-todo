@@ -12,7 +12,9 @@ export default function TodoItem({ completed, id, title, toggleTodo, deleteTodo 
         />
       </ListItemIcon>
 
-      <ListItemText primary={title} />
+      <ListItemText
+        primary={title}
+        primaryTypographyProps={{ style: { textDecoration: completed ? 'line-through' : 'none' } }} />
 
       <Button
         color='error'
