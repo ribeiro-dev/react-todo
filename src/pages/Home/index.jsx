@@ -68,7 +68,14 @@ export default function Index({ toggleTheme, theme }) {
       }}
     >
       <Container maxWidth='sm'>
-        <Box sx={{ textAlign: 'right', py: '10px' }}>
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          py: '40px',
+          }}>
+          <Typography component='h1' variant='h4' sx={{fontWeight: 'bold'}}>TodoApp</Typography>
+
           <IconButton aria-label="toggle theme" onClick={toggleTheme}>
             {theme == 'light' ? <IoSunny /> : <IoMoon />}
           </IconButton>
