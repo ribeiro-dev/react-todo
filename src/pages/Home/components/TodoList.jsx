@@ -1,6 +1,7 @@
-import { List } from '@mui/material';
+import { Collapse, List } from '@mui/material';
 
 import PropTypes from 'prop-types';
+import { TransitionGroup } from 'react-transition-group';
 
 import TodoItem from './TodoItem';
 
@@ -11,17 +12,20 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
       {/* placeholder */}
       {todos.length == 0 && "Nenhum item adicionado ainda"}
 
-      {todos.map(todo => {
-        return (
-          <TodoItem
-            {...todo} // pass as a prop
-            key={todo.id}
-            toggleTodo={toggleTodo}
-            deleteTodo={deleteTodo}
-          />
-        )
-      })}
-    </List>
+      <TransitionGroup>
+        {todos.map(todo => {
+          return (
+            <Collapse key={todo.id} easing={'linear'}>
+              <TodoItem
+                {...todo} // pass as a prop
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+              />
+            </Collapse>
+          )
+        })}
+      </TransitionGroup>
+    </List >
   )
 }
 
