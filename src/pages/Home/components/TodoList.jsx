@@ -1,4 +1,4 @@
-import { List } from '@mui/material';
+import { List, Typography } from '@mui/material';
 
 import PropTypes from 'prop-types';
 
@@ -8,18 +8,23 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
 
   return (
     <List className="list">
-      {todos.length == 0 && "Nenhum item adicionado ainda"}
-
-      {todos.map(todo => {
-        return (
-          <TodoItem
-            key={todo.id}
-            {...todo} // pass as a prop
-            toggleTodo={toggleTodo}
-            deleteTodo={deleteTodo}
-          />
-        )
-      })}
+      {todos.length == 0
+        ?
+        <Typography>
+          Nenhum item adicionado
+        </Typography>
+        :
+        todos.map(todo => {
+          return (
+            <TodoItem
+              key={todo.id}
+              {...todo} // pass as a prop
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          )
+        })
+      }
     </List >
   )
 }
