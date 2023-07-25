@@ -67,15 +67,36 @@ export default function Index({ toggleTheme, theme }) {
         transition: 'background-color .3s ease'
       }}
     >
-      <Container maxWidth='md'>
-        <Box sx={{ textAlign: 'right', py: '10px' }}>
+      <Container maxWidth='sm'>
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          pt: '20px',
+          pb: '40px'
+          }}>
+          <Typography
+            component='h1'
+            sx={{
+              fontWeight: 'bold',
+              fontSize: '2.5rem'
+            }}>
+            TodoApp
+          </Typography>
+
           <IconButton aria-label="toggle theme" onClick={toggleTheme}>
             {theme == 'light' ? <IoSunny /> : <IoMoon />}
           </IconButton>
         </Box>
         <NewTodoForm addTodo={addTodo} />
 
-        <Typography mt={3} variant='h4' className="header">Lista de Todos:</Typography>
+        <Typography mt={3}
+          variant='h4'
+          className="header"
+          sx={{ fontSize: '1.65rem' }}
+        >
+            Lista de Todos:
+        </Typography>
         <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       </Container>
     </Paper>

@@ -1,27 +1,31 @@
 import PropTypes from 'prop-types';
 
-import { Button, Checkbox, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { IconButton, Checkbox, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { FaTrash } from 'react-icons/fa';
 
 export default function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
   return (
     <ListItem key={id}>
+      <ListItemText
+        primary={title}
+        primaryTypographyProps={{ style: { textDecoration: completed ? 'line-through' : 'none', fontSize: '1.25rem' } }}
+      />
+
       <ListItemIcon>
         <Checkbox
           checked={completed}
           onChange={e => toggleTodo(id, e.target.checked)}
         />
       </ListItemIcon>
-      <ListItemText>
-        {title}
-        <Button
-          color='error'
-          variant='outlined'
-          onClick={() => deleteTodo(id)}
-          sx={{ml: 2}}
-        >
-          Delete
-        </Button>
-    </ListItemText>
+
+      <IconButton
+        color='error'
+        sx={{ fontSize: '20px' }}
+        aria-label="deletar"
+        onClick={() => deleteTodo(id)}
+      >
+        <FaTrash />
+      </IconButton>
     </ListItem >
   )
 }
