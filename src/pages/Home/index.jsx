@@ -72,7 +72,8 @@ export default function Index({ toggleTheme, theme }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          py: '40px',
+          pt: '20px',
+          pb: '40px'
           }}>
           <Typography
             component='h1'
