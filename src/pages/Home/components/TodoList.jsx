@@ -10,7 +10,7 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
     <List className="list">
       {todos.length == 0
         ?
-        <Typography>
+        <Typography sx={{ px: '20px' }}>
           Nenhum item adicionado
         </Typography>
         :
