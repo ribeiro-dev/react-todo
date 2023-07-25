@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createTheme, ThemeProvider } from '@mui/material';
 
-import Index from './pages/Home/index';
+import Router from "./Router";
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
 
-      <Index toggleTheme={toggleTheme} theme={theme} />
+      <Router />
 
     </ThemeProvider>
   )
