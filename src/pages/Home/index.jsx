@@ -74,7 +74,14 @@ export default function Index({ toggleTheme, theme }) {
           justifyContent: 'space-between',
           py: '40px',
           }}>
-          <Typography component='h1' variant='h4' sx={{fontWeight: 'bold'}}>TodoApp</Typography>
+          <Typography
+            component='h1'
+            sx={{
+              fontWeight: 'bold',
+              fontSize: '2.5rem'
+            }}>
+            TodoApp
+          </Typography>
 
           <IconButton aria-label="toggle theme" onClick={toggleTheme}>
             {theme == 'light' ? <IoSunny /> : <IoMoon />}
@@ -82,7 +89,13 @@ export default function Index({ toggleTheme, theme }) {
         </Box>
         <NewTodoForm addTodo={addTodo} />
 
-        <Typography mt={3} variant='h4' className="header">Lista de Todos:</Typography>
+        <Typography mt={3}
+          variant='h4'
+          className="header"
+          sx={{ fontSize: '1.65rem' }}
+        >
+            Lista de Todos:
+        </Typography>
         <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       </Container>
     </Paper>

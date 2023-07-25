@@ -8,7 +8,7 @@ export default function TodoItem({ completed, id, title, toggleTodo, deleteTodo 
     <ListItem key={id}>
       <ListItemText
         primary={title}
-        primaryTypographyProps={{ style: { textDecoration: completed ? 'line-through' : 'none' } }}
+        primaryTypographyProps={{ style: { textDecoration: completed ? 'line-through' : 'none', fontSize: '1.25rem' } }}
       />
 
       <ListItemIcon>
