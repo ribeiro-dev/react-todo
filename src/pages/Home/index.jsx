@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import { Box, Container, IconButton, Paper, Typography } from "@mui/material";
 import { IoMoon, IoSunny } from "react-icons/io5";
@@ -8,9 +8,12 @@ import PropTypes from 'prop-types';
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from "./components/TodoList";
 
+import ThemeContext from "../../context/ThemeContext";
 
-export default function Index({ toggleTheme, theme }) {
 
+export default function Index() {
+
+  const { toggleTheme, theme } = useContext(ThemeContext);
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("items");
     if (localValue == null) return [];

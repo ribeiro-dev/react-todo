@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { createTheme, ThemeProvider } from '@mui/material';
 
-import Index from './pages/Home/index';
+import Router from "./Router";
+import ThemeContext from "./context/ThemeContext";
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
@@ -22,10 +23,12 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
 
-      <Index toggleTheme={toggleTheme} theme={theme} />
+      <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+        <Router />
+      </ThemeProvider>
 
-    </ThemeProvider>
+    </ThemeContext.Provider>
   )
 }
